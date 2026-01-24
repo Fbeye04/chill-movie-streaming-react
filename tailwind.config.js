@@ -31,6 +31,10 @@ export default {
         "overlay-dark": "rgba(24, 26, 28, 0.8)",
         "overlay-medium": "rgba(24, 26, 28, 0.4)",
       },
+      fontSize: {
+        micro: "0.5rem",
+        xxs: "0.625rem",
+      },
     },
   },
   plugins: [],
