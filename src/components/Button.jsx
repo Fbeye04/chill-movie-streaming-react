@@ -11,7 +11,7 @@ const Button = ({ children, variant, className, type = "button" }) => {
   return (
     <button
       type={type}
-      className={`border text-white rounded-3xl text-xs md:text-base cursor-pointer flex justify-center items-center gap-3 md:gap-5 ${variants[variant]} ${className}`}>
+      className={`border text-white rounded-3xl text-xs md:text-lg cursor-pointer flex justify-center items-center gap-3 md:gap-5 transition-all duration-200 active:scale-95 ${variants[variant]} ${className}`}>
       {children}
     </button>
   );
