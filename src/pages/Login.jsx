@@ -4,8 +4,16 @@ import Logo from "../components/Logo";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import googleIcon from "../assets/google.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
+
   return (
     <AuthLayout bgImage={bgLogin}>
       <Logo />
@@ -17,7 +25,7 @@ const Login = () => {
         </p>
       </div>
 
-      <form className='w-full flex flex-col'>
+      <form onSubmit={handleLogin} className='w-full flex flex-col'>
         <Input
           labelInput='Username'
           type='text'
@@ -36,11 +44,11 @@ const Login = () => {
         <div className='flex items-center justify-between text-xs md:text-lg'>
           <div className='flex gap-1'>
             <span className='text-secondary'>Belum punya akun?</span>
-            <a
-              href='#'
+            <Link
+              to='/Register'
               className='text-white transition-transform duration-200 ease-in-out hover:text-blue-500'>
               Daftar
-            </a>
+            </Link>
           </div>
           <a
             href='#'
@@ -50,7 +58,9 @@ const Login = () => {
         </div>
 
         <div className='flex flex-col gap-2 mt-7'>
-          <Button variant='secondary'>Masuk</Button>
+          <Button variant='secondary' type='submit'>
+            Masuk
+          </Button>
 
           <p className='text-secondary text-center text-xs md:text-lg'>Atau</p>
 
